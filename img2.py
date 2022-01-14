@@ -25,17 +25,16 @@ def create_folder(path):
 
 
 def fetch(url, type):
-    ''' la funcion invoca a la funcion create folder y crea carpetacorrespondiente con la fecha automatica
+    ''' la funcion invoca a la funcion create folder y crea carpeta correspondiente con nombre por argumento
         la funcion toma 2 argumentos la url y un string para el nombre de la carpeta por ejemplo "fornite"
     '''
-
 
     with requests.Session() as s:
         folder = f"./{type}"
         create_folder(folder)
         # send get request
-        
-        
+
+
 response = requests.get(url)
 
 html_page = BeautifulSoup(response.text, 'html.parser')
